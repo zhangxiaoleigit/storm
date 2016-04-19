@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<configuration>
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%level] - %m%n</pattern>
+        </encoder>
+    </appender>-->
+    <appender name="KAFKA" class="com.storm.kafka.KafkaAppender">
+        <topic>baidu</topic>
+        <zookeeperHost>cp01-rdqa-dev328.cp01:8092</zookeeperHost>
+    </appender>
+
+    <!-- 日志级别 -->
+    <root>
+        <level value="debug" />
+        <appender-ref ref="KAFKA" />
+    </root>
+
+</configuration>
